@@ -1,7 +1,16 @@
-function TodoShow() {
+function TodoShow({todo, onDelete}) {
+
+  const handleClick = () => {
+    onDelete(todo.id)
+  }
+
+
   return(
     <div>
-      TodoShow
+      {todo.todoItem}
+      <button onClick={handleClick}>
+        Delete
+      </button>
     </div>
   )
 }

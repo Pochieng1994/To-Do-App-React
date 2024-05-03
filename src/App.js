@@ -1,16 +1,33 @@
 import { useState } from "react";
 import TodoCreate from './components/TodoCreate';
+import TodoList from "./components/TodoList";
 
 function App() {
   const [todos, setTodos] = useState([]);
 
   const createTodo = (todoItem) => {
-    console.log('You need to:', todoItem);
+    const updatedTodos = [
+      ...todos, {
+      id: Math.round(Math.random() * 10000),
+      todoItem: todoItem}
+    ];
+
+    setTodos(updatedTodos)
   }
+
+  const deleteTodoById = (id) => {
+    const updatedTodos = todos.filter((todo) => {
+      return todo.id !== id;
+    })
+
+    setTodos(updatedTodos)
+  }
+  
 
   return(
     <div>
       <TodoCreate onCreate = {createTodo} />
+      <TodoList todos = {todos} onDelete = {deleteTodoById}/>
     </div>
   )
 }

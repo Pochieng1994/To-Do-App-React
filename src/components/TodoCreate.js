@@ -17,9 +17,9 @@ function TodoCreate({onCreate}) {
 
   return(
     <div>
+      <h3>To Do List</h3>
       <form onSubmit={handleSubmit}>
-        <label>Todo Item</label>
-        <input value = {todoItem} onChange = {handleChange} />
+        <input value = {todoItem} onChange = {handleChange} placeholder="Enter a Task To Do ..." />
         <button>ADD</button>
       </form>
     </div>
