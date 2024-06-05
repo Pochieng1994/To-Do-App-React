@@ -1,33 +1,20 @@
-import { useState } from "react";
+import { useEffect, useContext } from "react";
 import TodoCreate from './components/TodoCreate';
 import TodoList from "./components/TodoList";
+import TodosContext from "./context/todos";
 
 function App() {
-  const [todos, setTodos] = useState([]);
 
-  const createTodo = (todoItem) => {
-    const updatedTodos = [
-      ...todos, {
-      id: Math.round(Math.random() * 10000),
-      todoItem: todoItem}
-    ];
-
-    setTodos(updatedTodos)
-  }
-
-  const deleteTodoById = (id) => {
-    const updatedTodos = todos.filter((todo) => {
-      return todo.id !== id;
-    })
-
-    setTodos(updatedTodos)
-  }
+  const {fetchTodos} = useContext(TodosContext);
   
-
+  useEffect(() => {
+    fetchTodos();
+  },[])
+  
   return(
     <div>
-      <TodoCreate onCreate = {createTodo} />
-      <TodoList todos = {todos} onDelete = {deleteTodoById}/>
+      <TodoCreate/>
+      <TodoList/>
     </div>
   )
 }
@@ -41,3 +28,8 @@ one single data structure that keeps track of all the books that have been creat
 time. Being that we would want the user to update the content on the screen we would use 
 the state system.
 */
+
+/*Inside of createtodo were going to do 2 things we are going to make a request off
+  to JSON server were going to get a response and response is going to contain the newly
+  created todo along with the ID that it was assigned were going to then take that response
+  and add it in our new todos piece of state.*/
