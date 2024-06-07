@@ -12,7 +12,7 @@ function TodoList() {
 
 
   return(
-    <div>
+    <div className="list-div mt-5 is-size-3">
       {renderedTodos}
     </div>
   )

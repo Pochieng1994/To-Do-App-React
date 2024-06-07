@@ -1,12 +1,3 @@
 {
-  "todos": [
-    {
-      "todoItem": "Go to the Beach on Sunday",
-      "id": 1
-    },
-    {
-      "todoItem": "Go shopping after work",
-      "id": 2
-    }
-  ]
+  "todos": []
 }

@@ -61,11 +61,14 @@ function Provider({children}) {
   }
 
   return (
-    <TodosContext.Provider value = {{valueToShare}}>
-      {children}
+    <TodosContext.Provider value = {valueToShare}>
+      {children} 
     </TodosContext.Provider>
   )
 }
 
 export {Provider};
 export default TodosContext;
+
+// Children represents all the components that are wrapped around
+// the TodosContext Provider

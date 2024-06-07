@@ -1,0 +1,28 @@
+.app-div {
+  margin-left: 39rem;
+  margin-top: 3rem;
+}
+
+.is-size-2 {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.create-input {
+  margin-left: -280px;
+}
+
+.button {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.list-div {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.show-div {
+  margin-bottom: 2rem;
+}
+
+.content-div {
+  margin-bottom: -5px;
+}

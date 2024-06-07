@@ -1,6 +1,7 @@
 import { useState, useContext } from "react";
 import TodoEdit from "./TodoEdit";
 import TodosContext from "../context/todos";
+import '../css/style.css';
 
 function TodoShow({todo}) {
 
@@ -26,16 +27,18 @@ function TodoShow({todo}) {
   }
 
   return(
-    <div>
-      <div>{content}</div>
+    <div className="show-div">
+      <div className="content-div">{content}</div>
 
-      <button onClick={handleEditClick}>
-        Edit
-      </button>
 
-      <button onClick={handleDeleteClick}>
-        Delete
-      </button>  
+        <button className="button is-rounded mr-1" onClick={handleEditClick}>
+          Edit
+        </button>
+
+        <button className="button is-danger is-rounded" onClick={handleDeleteClick}>
+          Delete
+        </button>  
+      
     </div>
   )
 }

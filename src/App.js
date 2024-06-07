@@ -2,6 +2,8 @@ import { useEffect, useContext } from "react";
 import TodoCreate from './components/TodoCreate';
 import TodoList from "./components/TodoList";
 import TodosContext from "./context/todos";
+import 'bulma/css/bulma.css';
+import './css/style.css';
 
 function App() {
 
@@ -12,7 +14,7 @@ function App() {
   },[])
   
   return(
-    <div>
+    <div className="app-div">
       <TodoCreate/>
       <TodoList/>
     </div>
