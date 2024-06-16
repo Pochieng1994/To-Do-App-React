@@ -11,6 +11,7 @@
   margin-left: -280px;
 }
 
+
 .button {
   font-family: Georgia, 'Times New Roman', Times, serif;
 }
@@ -25,4 +26,13 @@
 
 .content-div {
   margin-bottom: -5px;
+}
+
+.edit-div {
+  display: inline-block;
+  margin-right: 5px;
+}
+
+.edit-input {
+  font-family: Georgia, 'Times New Roman', Times, serif;
 }

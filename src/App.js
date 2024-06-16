@@ -1,11 +1,49 @@
-import { useEffect, useContext } from "react";
+import { useEffect, useContext, useState } from "react";
 import TodoCreate from './components/TodoCreate';
 import TodoList from "./components/TodoList";
 import TodosContext from "./context/todos";
 import 'bulma/css/bulma.css';
 import './css/style.css';
+import { googleLogout, useGoogleLogin } from '@react-oauth/google';
+import axios from "axios";
 
 function App() {
+
+  const [ user, setUser ] = useState([]);
+  const [ profile, setProfile ] = useState([]);
+
+  
+
+  const login = useGoogleLogin({
+        onSuccess: (codeResponse) => setUser(codeResponse),
+        onError: (error) => console.log('Login Failed:', error)
+    });
+
+  useEffect(
+      () => {
+          if (user) {
+              axios
+                  .get(`https://www.googleapis.com/oauth2/v1/userinfo?access_token=${user.access_token}`, {
+                      headers: {
+                          Authorization: `Bearer ${user.access_token}`,
+                          Accept: 'application/json'
+                      }
+                  })
+                  .then((res) => {
+                      setProfile(res.data);
+                  })
+                  .catch((err) => console.log(err));
+          }
+      },
+      [ user ]
+  );
+    
+  const logOut = () => {
+    googleLogout();
+    setProfile(null);
+  };
+
+
 
   const {fetchTodos} = useContext(TodosContext);
   
@@ -15,8 +53,27 @@ function App() {
   
   return(
     <div className="app-div">
-      <TodoCreate/>
-      <TodoList/>
+      <h2>React Google Login</h2>
+      <br />
+      <br />
+      {
+        profile ? (
+          <div>
+              <img src={profile.picture} alt="user image" />
+              <h3>User Logged in</h3>
+              <p>Name: {profile.name}</p>
+              <p>Email Address: {profile.email}</p>
+              <br />
+              <br />
+              <button onClick={logOut}>Log out</button>
+              <TodoCreate/>
+              <TodoList/>
+          </div>
+      ): (
+          <button onClick={login}>Sign in with Google 🚀 </button>
+      )
+      }
+     
     </div>
   )
 }

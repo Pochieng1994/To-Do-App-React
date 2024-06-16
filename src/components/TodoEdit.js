@@ -19,8 +19,10 @@ function TodoEdit({todo, onSubmit}) {
   return(
     <div>
       <form onSubmit={handleSubmit}>
-        <input value = {todoItem} onChange={handleChange}/>
-        <button>
+        <div className="edit-div">
+          <input className="edit-input input is-rounded" value = {todoItem} onChange={handleChange}/>
+        </div>
+        <button className="button is-rounded is-success">
           Save
         </button>
       </form>
