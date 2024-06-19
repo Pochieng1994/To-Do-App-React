@@ -9,8 +9,8 @@ import axios from "axios";
 
 function App() {
 
-  const [ user, setUser ] = useState([]);
-  const [ profile, setProfile ] = useState([]);
+  const [ user, setUser ] = useState(null);
+  const [ profile, setProfile ] = useState(null);
 
   
 
@@ -41,7 +41,7 @@ function App() {
   const logOut = () => {
     googleLogout();
     setProfile(null);
-  };
+};
 
 
 
@@ -53,24 +53,21 @@ function App() {
   
   return(
     <div className="app-div">
-      <h2>React Google Login</h2>
-      <br />
+      {profile ? null : <h2 className="react-google has-text-weight-bold is-size-3">To-Do App</h2>  }
       <br />
       {
         profile ? (
-          <div>
+          <div className="return-div ">
+            <button className="button-1 button is-danger is-rounded" onClick={logOut}>Log out</button>
+            <div className="user-info">
               <img src={profile.picture} alt="user image" />
-              <h3>User Logged in</h3>
-              <p>Name: {profile.name}</p>
-              <p>Email Address: {profile.email}</p>
-              <br />
-              <br />
-              <button onClick={logOut}>Log out</button>
+                <br />
+            </div>
               <TodoCreate/>
               <TodoList/>
           </div>
       ): (
-          <button onClick={login}>Sign in with Google 🚀 </button>
+          <button className="google-login button is-medium is-rounded" onClick={login}>Sign in with Google</button>
       )
       }
      

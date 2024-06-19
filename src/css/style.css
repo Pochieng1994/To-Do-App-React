@@ -1,6 +1,6 @@
 .app-div {
-  margin-left: 39rem;
-  margin-top: 3rem;
+  margin-left: 35rem;
+  margin-top: 20px;
 }
 
 .is-size-2 {
@@ -35,4 +35,32 @@
 
 .edit-input {
   font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.react-google {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  margin-left: 40px;
+}
+
+.google-login {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  margin-left: 25px;
+}
+
+.return-div {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+ 
+img {
+ border-radius: 50%;
+ height: 80px;
+ width: 80px;
+}
+
+.user-info {
+  margin-left: -525px;
+}
+
+.button-1 {
+  margin-left: 600px;
 }
