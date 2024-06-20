@@ -61,13 +61,14 @@ function App() {
             <button className="button-1 button is-danger is-rounded" onClick={logOut}>Log out</button>
             <div className="user-info">
               <img src={profile.picture} alt="user image" />
+              <p className="has-text-weight-bold">Name: {profile.name}</p>
                 <br />
             </div>
               <TodoCreate/>
               <TodoList/>
           </div>
       ): (
-          <button className="google-login button is-medium is-rounded" onClick={login}>Sign in with Google</button>
+          <button className="google-login button is-medium is-rounded is-link" onClick={login}>Sign in with Google</button>
       )
       }
      
