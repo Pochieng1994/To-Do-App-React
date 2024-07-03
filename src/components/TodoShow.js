@@ -3,7 +3,7 @@ import TodoEdit from "./TodoEdit";
 import TodosContext from "../context/todos";
 import '../css/style.css';
 
-function TodoShow({todo}) {
+function TodoShow({todo, profile}) {
 
   const [showEdit, setShowEdit] = useState(false);
   
@@ -29,7 +29,6 @@ function TodoShow({todo}) {
   return(
     <div className="show-div">
       <div className="content-div">{content}</div>
-
 
         <button className="button is-rounded mr-1" onClick={handleEditClick}>
           Edit

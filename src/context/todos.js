@@ -7,15 +7,17 @@ function Provider({children}) {
 
   const [todos, setTodos] = useState([]);
 
+
   const fetchTodos = async () => {
     const response = await axios.get('http://localhost:3001/todos');
 
     setTodos(response.data);
   }
 
-  const createTodo = async (todoItem) => {
+  const createTodo = async (todoItem, userEmail) => {
     const response =  await axios.post('http://localhost:3001/todos', {
-      todoItem:todoItem
+      todoItem:todoItem,
+      userEmail
     });
 
     const updatedTodos = [

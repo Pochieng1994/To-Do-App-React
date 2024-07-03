@@ -12,7 +12,6 @@ function App() {
   const [ user, setUser ] = useState(null);
   const [ profile, setProfile ] = useState(null);
 
-  
 
   const login = useGoogleLogin({
         onSuccess: (codeResponse) => setUser(codeResponse),
@@ -53,7 +52,7 @@ function App() {
   
   return(
     <div className="app-div">
-      {profile ? null : <h2 className="react-google has-text-weight-bold is-size-3">To-Do App</h2>  }
+      {profile ? null : <h2 className="react-google has-text-weight-bold is-size-3">To-Do App</h2> }
       <br />
       {
         profile ? (
@@ -64,13 +63,13 @@ function App() {
               <p className="has-text-weight-bold">Name: {profile.name}</p>
                 <br />
             </div>
-              <TodoCreate/>
-              <TodoList/>
+              <TodoCreate profile = {profile.email}/>
           </div>
       ): (
           <button className="google-login button is-medium is-rounded is-link" onClick={login}>Sign in with Google</button>
       )
       }
+      <TodoList profile = {profile.email}/>
      
     </div>
   )

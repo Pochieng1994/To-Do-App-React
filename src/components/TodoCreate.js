@@ -3,7 +3,7 @@ import TodosContext from "../context/todos";
 import '../css/style.css';
 
 
-function TodoCreate() {
+function TodoCreate({profile}) {
   
   const [todoItem, setTodoItem] = useState('');
   const { createTodo} = useContext(TodosContext);
@@ -14,7 +14,7 @@ function TodoCreate() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    createTodo(todoItem);
+    createTodo(todoItem, profile);
     setTodoItem('');
   }
 

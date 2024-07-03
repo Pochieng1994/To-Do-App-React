@@ -2,12 +2,13 @@ import TodoShow from "./TodoShow";
 import { useContext } from "react";
 import TodosContext from "../context/todos";
 
-function TodoList() {
+function TodoList({profile}) {
 
   const {todos} = useContext(TodosContext);
 
+
   const renderedTodos = todos.map((todo) => {
-    return <TodoShow key={todo.id}  todo = {todo} />
+    return <TodoShow profile = {profile} key={todo.id}  todo = {todo} />
   })
 
 
