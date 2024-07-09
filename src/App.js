@@ -12,6 +12,8 @@ function App() {
   const [ user, setUser ] = useState(null);
   const [ profile, setProfile ] = useState(null);
 
+  console.log(profile)
+
 
   const login = useGoogleLogin({
         onSuccess: (codeResponse) => setUser(codeResponse),
@@ -69,7 +71,11 @@ function App() {
           <button className="google-login button is-medium is-rounded is-link" onClick={login}>Sign in with Google</button>
       )
       }
-      <TodoList profile = {profile.email}/>
+
+      {
+        <TodoList profile={profile}/>
+      }
+
      
     </div>
   )
