@@ -69,8 +69,10 @@ function Provider({children}) {
   )
 }
 
+
+
 export {Provider};
 export default TodosContext;
 
 // Children represents all the components that are wrapped around
-// the TodosContext Provider
+// the Provider in this case the (TodosContext Provider).

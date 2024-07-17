@@ -12,7 +12,7 @@ function App() {
   const [ user, setUser ] = useState(null);
   const [ profile, setProfile ] = useState(null);
 
-  console.log(profile)
+
 
 
   const login = useGoogleLogin({
