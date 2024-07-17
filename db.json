@@ -1,3 +1,13 @@
 {
-  "todos": []
+  "todos": [
+    {
+      "todoItem": "Go to the Gym",
+      "id": 3
+    },
+    {
+      "todoItem": "Go for a walk",
+      "userEmail": "peterochieng0626@gmail.com",
+      "id": 4
+    }
+  ]
 }
