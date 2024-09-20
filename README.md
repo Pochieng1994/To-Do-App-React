@@ -18,7 +18,7 @@ of the application again using your Google Mail.
 
 ## Technologies Used
 
-JSX, CSS, Bulma CSS, Javacript, React-JS, and the Axios Library.
+JSX, CSS, Bulma CSS, Javacript, React-JS, Google OAuth Login and the Axios Library.
 
 ## How to get the Application Started
 
